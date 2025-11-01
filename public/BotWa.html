@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Bot WA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <h1>Bot WhatsApp</h1>
+    <input type="text" id="cmd" placeholder="Masukkan perintah...">
+    <button id="execute">Eksekusi</button>
+    <div id="output"></div>
+    <button id="logoutBtn" class="logout-btn">Logout</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/socket.io@2.3.0/dist/socket.io.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
+      await fetch('/logout');
+      window.location.href = '/login.html';
+    });
+  </script>
+</body>
+</html>
